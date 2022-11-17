@@ -20,6 +20,7 @@ spec:
         loki:
           serviceMonitor:
             enabled: true
+          isDefault: false
   syncPolicy:
     automated:
       prune: true
