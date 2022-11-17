@@ -15,13 +15,6 @@ spec:
     targetRevision: 41.9.0
     helm:
       version: v3
-    values: |
-      kubelet:
-        serviceMonitor:
-          relabelings:
-          - action: replace
-            sourceLabels: [__metrics_path__]
-            targetLabel: metrics_path
     chart: kube-prometheus-stack
   syncPolicy:
     automated:
@@ -30,3 +23,8 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
+  ignoreDifferences:
+  - group: monitoring.coreos.com
+    kind: ServiceMonitor
+    jqPathExpressions:
+    - .spec.endpoints[]?.relabelings[]?.action
