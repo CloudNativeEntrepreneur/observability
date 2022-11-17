@@ -15,7 +15,7 @@ spec:
     targetRevision: 41.9.0
     helm:
       version: v3
-      skipCrds: true
+      # skipCrds: true
       # values: |-
       #   #Snip the values
     chart: kube-prometheus-stack
@@ -25,3 +25,4 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true
