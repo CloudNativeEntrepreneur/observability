@@ -15,9 +15,11 @@ spec:
     targetRevision: 41.9.0
     helm:
       version: v3
-      # skipCrds: true
-      # values: |-
-      #   #Snip the values
+    values: |
+      relabelings:
+      - action: replace
+        sourceLabels: [__metrics_path__]
+        targetLabel: metrics_path
     chart: kube-prometheus-stack
   syncPolicy:
     automated:
