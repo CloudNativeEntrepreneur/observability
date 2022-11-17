@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-prometheus-stack
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  destination:
+    name: in-cluster
+    namespace: observability
+  project: {{ .Values.argocd.project }}
+  source:
+    repoURL: 'https://prometheus-community.github.io/helm-charts'
+    targetRevision: 41.9.0
+    helm:
+      version: v3
+      # skipCrds: true
+      # values: |-
+      #   #Snip the values
+    chart: kube-prometheus-stack
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
