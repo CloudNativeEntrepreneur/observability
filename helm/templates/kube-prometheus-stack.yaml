@@ -11,11 +11,11 @@ spec:
     namespace: observability
   project: {{ .Values.argocd.project }}
   source:
-    repoURL: 'https://prometheus-community.github.io/helm-charts'
+    repoURL: https://prometheus-community.github.io/helm-charts
     targetRevision: 41.9.0
     helm:
       version: v3
-      # skipCrds: true
+      skipCrds: true
       # values: |-
       #   #Snip the values
     chart: kube-prometheus-stack
