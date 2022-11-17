@@ -10,5 +10,5 @@ If you want to add a dashboard, just create a new JSON file in the `dashboards` 
 
 Name | Description | JSON file | Original Source
 --- | --- | --- | ---
-Cert-Manager | Displays [cert-manager](https://github.com/jetstack/cert-manager) logs & metrics, with certificates expiration dates | [cert-manager.json](dashboards/cert-manager.json) | N/A 
+Cert-Manager | Displays [cert-manager](https://github.com/jetstack/cert-manager) logs & metrics, with certificates expiration dates | [cert-manager.json](dashboards/cert-manager.json) | https://grafana.com/grafana/dashboards/11001-cert-manager/
 
