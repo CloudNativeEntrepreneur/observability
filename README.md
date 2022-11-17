@@ -13,7 +13,7 @@ metadata:
   name: observability
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "-1"
+    argocd.argoproj.io/sync-wave: "2"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -38,7 +38,7 @@ metadata:
   name: observability
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "-1"
+    argocd.argoproj.io/sync-wave: "3"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -47,13 +47,12 @@ spec:
     repoURL: https://github.com/cloudnativeentrepreneur/observability.git
     targetRevision: HEAD
     path: helm
-    helm:
-      version: v3
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: observability
   syncPolicy:
     automated:
       selfHeal: true
       prune: true
+
 ```
