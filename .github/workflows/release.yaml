@@ -10,5 +10,4 @@ jobs:
     uses: CloudNativeEntrepreneur/actions/.github/workflows/github-with-helm-release.yaml@main
     secrets: inherit
     with:
-      previousRelease: ${git describe --abbrev=0 --tags}
       updateImageTags: false

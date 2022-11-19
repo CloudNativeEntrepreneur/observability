@@ -60,5 +60,9 @@ spec:
 ## Included
 
 ### kube-prometheus-stack
+
+Includes:
+* Prometheus
+
 ### loki-stack
 ### custom grafana dashboard example
