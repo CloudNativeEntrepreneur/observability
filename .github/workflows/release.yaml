@@ -1,0 +1,14 @@
+name: release
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+
+  release:
+    uses: CloudNativeEntrepreneur/actions/.github/workflows/github-with-helm-release.yaml@main
+    secrets: inherit
+    with:
+      previousRelease: ${git describe --abbrev=0 --tags}
+      updateImageTags: false
