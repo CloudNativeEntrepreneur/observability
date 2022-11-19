@@ -7,8 +7,8 @@ on:
 jobs:
 
   release:
-    uses: CloudNativeEntrepreneur/actions/.github/workflows/github-with-helm-release.yaml@main
+    uses: CloudNativeEntrepreneur/actions/.github/workflows/github-release.yaml@main
     secrets: inherit
     with:
-      updateImageTags: false
-      updateChartVersion: true
+      container: false
+      helm: true
