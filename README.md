@@ -63,6 +63,7 @@ spec:
 
 Includes:
 * Prometheus
+* Alertmanager
 
 ### loki-stack
 ### custom grafana dashboard example
