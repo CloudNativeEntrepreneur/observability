@@ -56,3 +56,9 @@ spec:
       prune: true
 
 ```
+
+## Included
+
+### kube-prometheus-stack
+### loki-stack
+### custom grafana dashboard example
