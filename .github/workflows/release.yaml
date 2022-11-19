@@ -11,3 +11,4 @@ jobs:
     secrets: inherit
     with:
       updateImageTags: false
+      updateChartVersion: true
